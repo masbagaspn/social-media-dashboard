@@ -1,0 +1,401 @@
+@import 'color', 'general';
+
+.social-media-dashboard{
+    width: 100vw;
+    height: 100vh;
+    padding: 0 17.5%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: $light-background;
+    z-index: 0;
+
+    &::before{
+        content: '';
+        position: absolute;
+        width: 100vw;
+        height: 32.5%;
+        border-radius: 0 0 2rem 2rem;
+
+        top: 0;
+        left: 0;
+        background-color: $light-top-background-pattern;
+        z-index: 0;
+    }
+    
+    .header{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        z-index: 1;
+
+        .dashboard-title{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: .5rem;
+
+            .title{
+                font-weight: 700;
+                font-size: 24px;
+                color: $light-dark-blue-text;
+            }
+            small{
+                font-weight: 700;
+                font-size: 12px;
+                color: $light-blue-text;
+            }
+        }
+
+        .switcher-container{
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-direction: row;
+
+            gap: 1rem;
+
+            label{
+                font-weight: 700;
+                font-size: .7rem;
+                color: $light-blue-text;
+            }
+
+            .switcher{
+                position: relative;
+                width: 2.5rem;
+                height: 1.25rem;
+                border-radius: 1rem;
+                background-color: $light-toggle-background;
+                padding: 2px;
+                cursor: pointer;
+
+                .checkbox{
+                    position: absolute;
+                    z-index: 4;
+                    width: 1.25rem;
+                    height: 1.25rem;
+                    left: 0;
+                    top: 0;
+                    opacity: 0;
+                    cursor: pointer;
+                }
+                .toggle{
+                    z-index: 3;
+                    position: absolute;
+                    top: .125rem;
+                    left: .125rem;
+
+                    width: 1rem;
+                    height: 1rem;
+                    background-color: white;
+                    border-radius: 50%;
+                    transition: all .5s ease-in-out;
+                }
+            }
+        }
+    }
+
+    .follower-progress-container{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: center;
+        align-items: center;
+        grid-gap: 1rem;
+        z-index: 1;
+
+        .followers-card{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            height: 10rem;
+            border-radius: 5px 5px 10px 10px;
+            z-index: 0;
+            background-color: $light-background;
+
+            cursor: pointer;
+            
+            .card-container{
+                position: absolute;
+                top: .25rem;
+                width: 100%;
+                height: 9.75rem;
+                padding: 1rem;
+                border-radius: 0 0 5px 5px;
+                background-color: $light-card-background;
+
+                &:hover{
+                    background-color: #e1e3f0;
+                }
+    
+                .social-media{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: row;
+                    gap: .5rem;
+    
+                    img{
+                        width: 14px;
+                    }
+    
+                    .name{
+                        font-weight: 700;
+                        color: $light-blue-text;
+                        font-size: .7rem;
+                    }
+                }
+
+                .total-followers{
+                    color: $light-dark-blue-text;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    margin: 1rem 0;
+    
+                    .total{
+                        font-size: 2.5rem;
+                        letter-spacing: -1px;
+                    }
+                    p{
+                        font-size: .7rem;
+                        letter-spacing: 4px;
+                        text-transform: uppercase;
+                        color: $light-blue-text;
+                    }
+                }
+    
+                .progress-container{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: row;
+                    gap: .25rem;
+    
+                    small{
+                        font-size: .7rem;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+
+        .facebook{
+            background-color: $facebook;
+        }
+     
+        .twitter{
+            background-color: $twitter;
+        }
+     
+        .instagram{
+            background-image: $instagram;
+        }
+     
+        .youtube{
+            background-color: $youtube;
+        }
+    }
+
+    .overview-container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        .section-title{
+            width: 100%;
+            display: flex;
+            justify-self: flex-start;
+
+            font-size: 1.25rem;
+            color: $light-blue-text;
+        }
+
+        .overview-card-container{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 1fr 1fr;
+            grid-gap: 1rem;
+
+            .overview-card{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: column;
+                
+                border-radius: 5px;                
+                background-color: $light-card-background;
+                height: 6rem;
+                padding: 1.25rem 1.5rem 1rem 1rem;
+                gap: 1rem;
+
+                cursor: pointer;
+
+                &:hover{
+                    background-color: #e1e3f0;
+                }
+                
+                .row{
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    flex-direction: row;
+
+                    .card-title{
+                        font-size: .75rem;
+                        font-weight: 700;
+                        color: $light-blue-text;
+                    }
+                    img{
+                        width: 1rem;
+                    }
+                }
+
+                .row-2{
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                    flex-direction: row;
+
+                    .total-overview{
+                        font-size: 1.5rem;
+                        color: $light-dark-blue-text;
+                    }
+
+                    .progress-overview-container{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: .25rem;
+
+                        small{
+                            font-size: .6rem;
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.up{
+    color: $lime-green;
+}
+
+.down{
+    color: $bright-red;
+}
+.dark-mode{
+    background-color: $dark-background;
+
+    &::before{
+        background-color: $dark-top-background-pattern;
+    }
+
+    .header{
+        .dashboard-title{
+            .title{
+                color: $dark-white-text;
+            }
+            small{
+                color: $dark-blue-text;
+            }
+        }
+
+        .switcher-container{
+            label{
+                color: $dark-white-text;
+            }
+
+            .switcher{
+                background-image: $dark-toggle-background;
+                
+                .toggle{
+                    background-color: $dark-card-background;
+                }
+            }
+        }
+    }
+
+    .follower-progress-container{
+
+        .followers-card{
+            .card-container{
+                background-color: $dark-card-background;
+                &:hover{
+                    background-color: #333a56;
+                }
+    
+                .social-media{
+                    .name{
+                        color: $dark-blue-text;
+                    }
+                }
+                .total-followers{
+                    color: $dark-white-text;
+    
+                    .total{
+                        color: $dark-white-text;
+                    }
+                    p{
+                        color: $dark-blue-text;
+                    }
+                }
+            }
+        }
+    }
+
+    .overview-container{
+        .section-title{
+            color: $dark-blue-text;
+        }
+
+        .overview-card-container{
+            .overview-card{               
+                background-color: $dark-card-background;
+
+                &:hover{
+                    background-color: #333a56;
+                }
+                
+                .row{
+                    .card-title{
+                        color: $dark-blue-text;
+                    }
+                }
+
+                .row-2{
+                    .total-overview{
+                        color: $dark-white-text;
+                    }
+
+                    .up{
+                        color: $lime-green;
+                    }
+                    .down{
+                        color: $bright-red;
+                    }
+                }
+            }
+        }
+    }
+}
